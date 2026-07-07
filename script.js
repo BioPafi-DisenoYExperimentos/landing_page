@@ -4,12 +4,16 @@ const menu = document.querySelector(".menu-horizontal");
 const openMenuBtn = document.querySelector(".open-menu");
 
 //Funcion
-
 function toggleMenu() {
-  menu.classList.toggle("menu_opened");
+  if (menu) {
+    menu.classList.toggle("menu_opened");
+  }
 }
 
-openMenuBtn.addEventListener("click", toggleMenu);
+if (openMenuBtn && menu) {
+  openMenuBtn.addEventListener("click", toggleMenu);
+}
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,11 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const savedLang = localStorage.getItem('language') || 'es';
   toggleLanguage(savedLang, false);
 
-  // Configurar botón
-  document.getElementById('language-toggle').addEventListener('click', () => {
-      const newLang = localStorage.getItem('language') === 'es' ? 'en' : 'es';
-      toggleLanguage(newLang);
-  });
+  const langToggle = document.getElementById('language-toggle');
+  if (langToggle) {
+      langToggle.addEventListener('click', () => {
+          const currentLang = document.documentElement.lang || 'es';
+          const newLang = currentLang === 'es' ? 'en' : 'es';
+          toggleLanguage(newLang);
+      });
+  }
 });
 
 function toggleLanguage(lang, save = true) {
