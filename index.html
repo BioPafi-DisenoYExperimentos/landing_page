@@ -56,8 +56,7 @@
                     <li><a href="#funcionamiento">¿Cómo funciona?</a></li>
                     <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
                     <li><a href="#about-product">Sobre el Producto</a></li>
-                    <li><a href="#about-team">Nuestro Equipo</a></li>
-                    <li><a href="https://polite-bay-0d4eadd10.1.azurestaticapps.net/">Acceder</a></li>
+                    <li><a href="http://localhost:4200/login">Acceder</a></li>
                 </ul>
 
             </nav>
@@ -78,14 +77,15 @@
 
             <div class="hero-content">
 
-                <h1 data-lang-es="Tu planta siempre<br>bien cuidada,<br>sin complicaciones" 
-                    data-lang-en="Your plant always <br> well cared for,<br>without complications">Tu planta siempre<br>bien cuidada,<br>sin complicaciones</h1>
+                <div class="hero-badge" data-lang-es="🌱 Cuidado inteligente de plantas" data-lang-en="🌱 Smart Plant Care">🌱 Cuidado inteligente de plantas</div>
 
-                <p data-lang-es="Monitorea su estado, recibe notificaciones y accede a<br>guías sin ser un experto." 
-                    data-lang-en="Monitor its status, receive notifications and access<br>guides without being an expert.">Monitorea su estado, recibe notificaciones y accede a<br>guías sin ser un experto.</p>
+                <h1 data-lang-es="Tu planta siempre<br><span class='highlight'>bien cuidada</span>,<br>sin complicaciones" 
+                    data-lang-en="Your plant always<br><span class='highlight'>well cared for</span>,<br>without complications">Tu planta siempre<br><span class="highlight">bien cuidada</span>,<br>sin complicaciones</h1>
 
-                <a href="https://polite-bay-0d4eadd10.1.azurestaticapps.net/register" class="cta-button" data-lang-es="Empieza ahora" data-lang-en="Start now">Empieza ahora</a>
+                <p data-lang-es="Monitorea su estado de forma inteligente, recibe alertas automáticas y accede a guías de cuidado premium sin ser un experto." 
+                    data-lang-en="Smartly monitor its status, receive automatic alerts and access premium care guides without being an expert.">Monitorea su estado de forma inteligente, recibe alertas automáticas y accede a guías de cuidado premium sin ser un experto.</p>
 
+                <a href="http://localhost:4200/register" class="cta-button" data-lang-es="Empieza ahora" data-lang-en="Start now">Empieza ahora</a>
 
             </div>
 
@@ -158,7 +158,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$2.99/mes" data-lang-en="$2.99/month">$2.99/mes</p>
-                    <a href="https://polite-bay-0d4eadd10.1.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <a href="http://localhost:4200/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
                 </div>
 
                 <div class="plan plan-2">
@@ -177,7 +177,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$10.99/mes" data-lang-en="$10.99/month">$10.99/mes</p>
-                    <a href="https://polite-bay-0d4eadd10.1.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <button class="plan-button waitlist-trigger" data-plan="Premium" data-lang-es="Me interesa" data-lang-en="I'm interested">Me interesa</button>
                 </div>
 
                 <div class="plan plan-3">
@@ -202,7 +202,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$16.99/mes" data-lang-en="$16.99/month">$16.99/mes</p>
-                    <a href="https://polite-bay-0d4eadd10.1.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <button class="plan-button waitlist-trigger" data-plan="Pro" data-lang-es="Me interesa" data-lang-en="I'm interested">Me interesa</button>
                 </div>
             </div>
         </section>
@@ -242,48 +242,74 @@
             </div>
         </section>
 
-        <!-- About the Team -->
-        <section class="about-team" id="about-team">
-            <div class="about-team-container">
-                <h2 data-lang-es="Nuestro Equipo" data-lang-en="About the Team">Sobre el Equipo</h2>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MF6QeQh2nEM"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/PlantSync-logo2.png" alt="Logo PlantSync">
                 </div>
+            <div class="footer-section">
+                <h4 data-lang-es="Ayuda." data-lang-en="Help">Ayuda</h4>
+                <ul>
+                <li data-lang-es="Preguntas Frecuentes" data-lang-en="Frequently Asked Questions"><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
             </div>
-        </section>
+            <div class="footer-section">
+                <h4 data-lang-es="Políticas" data-lang-en="Policies">Políticas</h4>
+                <ul>
+                <li data-lang-es="Privacidad" data-lang-en="Privacy"><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-lang-es="Redes Oficiales" data-lang-en="Official Networks">Redes Oficiales</h4>
+                <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+            </div>
+            <div class="footer-bottom">
+            <a href="terms-conditions.html" data-lang-es="Términos y Condiciones" data-lang-en="Terms and Conditions">Términos y Condiciones</a>
+            </div>
+        </footer>
     </main>
-</body>
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="images/PlantSync-logo2.png" alt="Logo PlantSync">
+
+    <!-- Modal de Lista de Espera -->
+    <div id="waitlist-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 data-lang-es="¡Únete a la Lista de Espera!" data-lang-en="Join the Waitlist!">¡Únete a la Lista de Espera!</h3>
+                <p data-lang-es="Registra tu interés en el plan de pago y sé de los primeros en probarlo." data-lang-en="Register your interest in the paid plan and be among the first to try it.">Registra tu interés en el plan de pago y sé de los primeros en probarlo.</p>
+            </div>
+            <form id="waitlist-form">
+                <input type="hidden" id="selected-plan-input" name="plan">
+                
+                <div class="modal-form-group">
+                    <label for="waitlist-name" data-lang-es="Nombre Completo" data-lang-en="Full Name">Nombre Completo</label>
+                    <input type="text" id="waitlist-name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="waitlist-email" data-lang-es="Correo Electrónico" data-lang-en="Email Address">Correo Electrónico</label>
+                    <input type="email" id="waitlist-email" placeholder="correo@ejemplo.com" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label data-lang-es="Plan Seleccionado" data-lang-en="Selected Plan">Plan Seleccionado</label>
+                    <input type="text" id="display-plan" readonly style="font-weight: bold; background-color: rgba(0,0,0,0.05);">
+                </div>
+
+                <button type="submit" class="modal-submit-btn" data-lang-es="Registrar interés" data-lang-en="Register interest">Registrar interés</button>
+            </form>
+            <div id="waitlist-success-msg" class="success-message" style="display: none; text-align: center; margin-top: 1rem;">
+                <i class="fa-solid fa-circle-check" style="font-size: 2.5rem; color: #4CAF50; margin-bottom: 0.5rem;"></i>
+                <p data-lang-es="¡Gracias por tu interés! Hemos guardado tus datos en la lista de espera." data-lang-en="Thank you for your interest! We have saved your details in the waitlist." style="font-weight: 600;">¡Gracias por tu interés! Hemos guardado tus datos en la lista de espera.</p>
+            </div>
         </div>
-      <div class="footer-section">
-        <h4 data-lang-es="Ayuda." data-lang-en="Help">Ayuda</h4>
-        <ul>
-          <li data-lang-es="Preguntas Frecuentes" data-lang-en="Frequently Asked Questions"><a href="#">Preguntas Frecuentes</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4 data-lang-es="Políticas" data-lang-en="Policies">Políticas</h4>
-        <ul>
-          <li data-lang-es="Privacidad" data-lang-en="Privacy"><a href="#">Privacidad</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4 data-lang-es="Redes Oficiales" data-lang-en="Official Networks">Redes Oficiales</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <a href="terms-conditions.html" data-lang-es="Términos y Condiciones" data-lang-en="Terms and Conditions">Términos y Condiciones</a>
-    </div>
-    <div class="footer-bottom">
-        <a href="#" data-lang-es="©2025 Copyright BioPafi. Todos los derechos reservados" data-lang-en="©2025 Copyright BioPafi. All rights reserved.">©2025 Copyright BioPafi. Todos los derechos reservados</a>
-      </div>
-  </footer>
+</body>
+</html>
+
   
