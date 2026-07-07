@@ -50,3 +50,58 @@ function toggleLanguage(lang, save = true) {
           'PlantSync – Smart plant care technology';
   }
 }
+
+// Waitlist Modal Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('waitlist-modal');
+  if (!modal) return;
+  const closeBtn = document.querySelector('.close-modal');
+  const waitlistForm = document.getElementById('waitlist-form');
+  const successMsg = document.getElementById('waitlist-success-msg');
+  const planInput = document.getElementById('selected-plan-input');
+  const displayPlanInput = document.getElementById('display-plan');
+
+  // Open modal on click
+  document.querySelectorAll('.waitlist-trigger').forEach(button => {
+    button.addEventListener('click', () => {
+      const planName = button.getAttribute('data-plan');
+      planInput.value = planName;
+      displayPlanInput.value = planName;
+      
+      // Reset form and message
+      waitlistForm.reset();
+      waitlistForm.style.display = 'block';
+      successMsg.style.display = 'none';
+      
+      modal.style.display = 'flex';
+    });
+  });
+
+  // Close modal
+  const closeModal = () => {
+    modal.style.display = 'none';
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Form submission
+  waitlistForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('waitlist-name').value;
+    const email = document.getElementById('waitlist-email').value;
+    const plan = planInput.value;
+
+    // Simulate saving to local storage (experiment analytics tracking)
+    const key = `waitlist_${Date.now()}`;
+    localStorage.setItem(key, JSON.stringify({ name, email, plan, timestamp: new Date().toISOString() }));
+
+    // Show success message
+    waitlistForm.style.display = 'none';
+    successMsg.style.display = 'block';
+  });
+});

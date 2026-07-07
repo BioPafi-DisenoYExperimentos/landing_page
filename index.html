@@ -56,7 +56,7 @@
                     <li><a href="#funcionamiento">¿Cómo funciona?</a></li>
                     <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
                     <li><a href="#about-product">Sobre el Producto</a></li>
-                    <li><a href="https://yellow-ocean-0e2fe8a10.6.azurestaticapps.net/login">Acceder</a></li>
+                    <li><a href="http://localhost:4200/login">Acceder</a></li>
                 </ul>
 
             </nav>
@@ -85,7 +85,7 @@
                 <p data-lang-es="Monitorea su estado de forma inteligente, recibe alertas automáticas y accede a guías de cuidado premium sin ser un experto." 
                     data-lang-en="Smartly monitor its status, receive automatic alerts and access premium care guides without being an expert.">Monitorea su estado de forma inteligente, recibe alertas automáticas y accede a guías de cuidado premium sin ser un experto.</p>
 
-                <a href="https://yellow-ocean-0e2fe8a10.6.azurestaticapps.net/register" class="cta-button" data-lang-es="Empieza ahora" data-lang-en="Start now">Empieza ahora</a>
+                <a href="http://localhost:4200/register" class="cta-button" data-lang-es="Empieza ahora" data-lang-en="Start now">Empieza ahora</a>
 
             </div>
 
@@ -158,7 +158,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$2.99/mes" data-lang-en="$2.99/month">$2.99/mes</p>
-                    <a href="https://yellow-ocean-0e2fe8a10.6.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <a href="http://localhost:4200/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
                 </div>
 
                 <div class="plan plan-2">
@@ -177,7 +177,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$10.99/mes" data-lang-en="$10.99/month">$10.99/mes</p>
-                    <a href="https://yellow-ocean-0e2fe8a10.6.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <button class="plan-button waitlist-trigger" data-plan="Premium" data-lang-es="Me interesa" data-lang-en="I'm interested">Me interesa</button>
                 </div>
 
                 <div class="plan plan-3">
@@ -202,7 +202,7 @@
                         </ul>
                     </div>
                     <p data-lang-es="$16.99/mes" data-lang-en="$16.99/month">$16.99/mes</p>
-                    <a href="https://yellow-ocean-0e2fe8a10.6.azurestaticapps.net/register" class="plan-button" data-lang-es="Ir ahora" data-lang-en="Go now">Ir ahora</a>
+                    <button class="plan-button waitlist-trigger" data-plan="Pro" data-lang-es="Me interesa" data-lang-en="I'm interested">Me interesa</button>
                 </div>
             </div>
         </section>
@@ -272,11 +272,43 @@
             <div class="footer-bottom">
             <a href="terms-conditions.html" data-lang-es="Términos y Condiciones" data-lang-en="Terms and Conditions">Términos y Condiciones</a>
             </div>
-            <div class="footer-bottom">
-                <a href="#" data-lang-es="©2025 Copyright BioPafi. Todos los derechos reservados" data-lang-en="©2025 Copyright BioPafi. All rights reserved.">©2025 Copyright BioPafi. Todos los derechos reservados</a>
-            </div>
         </footer>
     </main>
+
+    <!-- Modal de Lista de Espera -->
+    <div id="waitlist-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 data-lang-es="¡Únete a la Lista de Espera!" data-lang-en="Join the Waitlist!">¡Únete a la Lista de Espera!</h3>
+                <p data-lang-es="Registra tu interés en el plan de pago y sé de los primeros en probarlo." data-lang-en="Register your interest in the paid plan and be among the first to try it.">Registra tu interés en el plan de pago y sé de los primeros en probarlo.</p>
+            </div>
+            <form id="waitlist-form">
+                <input type="hidden" id="selected-plan-input" name="plan">
+                
+                <div class="modal-form-group">
+                    <label for="waitlist-name" data-lang-es="Nombre Completo" data-lang-en="Full Name">Nombre Completo</label>
+                    <input type="text" id="waitlist-name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="waitlist-email" data-lang-es="Correo Electrónico" data-lang-en="Email Address">Correo Electrónico</label>
+                    <input type="email" id="waitlist-email" placeholder="correo@ejemplo.com" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label data-lang-es="Plan Seleccionado" data-lang-en="Selected Plan">Plan Seleccionado</label>
+                    <input type="text" id="display-plan" readonly style="font-weight: bold; background-color: rgba(0,0,0,0.05);">
+                </div>
+
+                <button type="submit" class="modal-submit-btn" data-lang-es="Registrar interés" data-lang-en="Register interest">Registrar interés</button>
+            </form>
+            <div id="waitlist-success-msg" class="success-message" style="display: none; text-align: center; margin-top: 1rem;">
+                <i class="fa-solid fa-circle-check" style="font-size: 2.5rem; color: #4CAF50; margin-bottom: 0.5rem;"></i>
+                <p data-lang-es="¡Gracias por tu interés! Hemos guardado tus datos en la lista de espera." data-lang-en="Thank you for your interest! We have saved your details in the waitlist." style="font-weight: 600;">¡Gracias por tu interés! Hemos guardado tus datos en la lista de espera.</p>
+            </div>
+        </div>
+    </div>
 </body>
 
   
