@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
           toggleLanguage(newLang);
       });
   }
+
+  // Google Analytics - Track CTA Button Click
+  const ctaBtn = document.querySelector('.cta-button');
+  if (ctaBtn) {
+      ctaBtn.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+              gtag('event', 'click_cta_register', {
+                  event_category: 'engagement',
+                  event_label: 'Empieza ahora'
+              });
+          }
+      });
+  }
 });
 
 function toggleLanguage(lang, save = true) {
@@ -81,6 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       successMsg.style.display = 'none';
       
       modal.style.display = 'flex';
+
+      // Google Analytics - Track Plan Selection
+      if (typeof gtag === 'function') {
+        gtag('event', 'select_plan', {
+          event_category: 'engagement',
+          event_label: planName
+        });
+      }
     });
   });
 
@@ -106,6 +127,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Simulate saving to local storage (experiment analytics tracking)
     const key = `waitlist_${Date.now()}`;
     localStorage.setItem(key, JSON.stringify({ name, email, plan, timestamp: new Date().toISOString() }));
+
+    // Google Analytics - Track Form Submission (Conversion)
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        event_category: 'conversion',
+        event_label: plan,
+        value: 1.0
+      });
+    }
 
     // Show success message
     waitlistForm.style.display = 'none';
